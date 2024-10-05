@@ -44,11 +44,11 @@ def sum():
       sum_entry = Sum(num1=num1, num2=num2, result=result)
       session.add(sum_entry)
       
-  return jsonify({'result': result})
+    return jsonify({'result': result}), 200
 
 @app.route('/sum',methods=['GET'])
 def find_all():
-  sums= db.session.execute(db.select(Sum)).scalars()
+  sums = db.session.execute(db.select(Sum)).scalars()
   return sums_schema.jsonify(sums)
 
 @app.route('/sum/result/<int:result>', methods=['GET'])

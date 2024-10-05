@@ -1,4 +1,4 @@
-# CI/CD GitHub Commands
+# Deployment with Render
 
 ## Author
 
@@ -19,8 +19,9 @@
   CodeWars:
     <https://www.codewars.com/users/ddurant94>
 
+  Postman:
+  <https://go.postman.co/workspace/be8468fc-ca8a-464f-87da-a26b0c5d263e/collection/34937834-868a9c47-6da7-48aa-a570-192e3d80ac91>
+
 ## About
 
-This repository focuses on Continuous Integration/Continuous Deployment (CI/CD). CI/CD is a software development approach designed to enhance the speed, efficiency, and reliability of software delivery. It involves frequent code integration, automated testing, and continuous deployment of software changes to production.
-
-To see this in action, navigate to the feature branch of this repository. Then, go to the Actions tab and click on the "app.py changes" to observe the testing that CI/CD performs.
+  This repository is dedicated to deploying applications with Render. By moving my application from localhost to a web service, everyone can enjoy this simple addition application. To try out the PostgreSQL database, visit the Postman link above and give it a go. For more information about this application, check out the docs.txt file.

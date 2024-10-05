@@ -1,0 +1,46 @@
+About:
+    CI/CD GitHub Commands is a basic Continuous Integration/Continuous Deployment (CI/CD) layout. In the workflows folder nested within the 
+  .github directory, there is a file named main.yaml that contains all the testing configurations for GitHub Actions. These tests are written 
+  using Yet Another Markup Language (YAML) to define commands for testing files within your application, from your Virtual Environment (venv) 
+  to all the code within your application.
+
+    This process involves pushing changes to a branch before merging them into your main branch, ensuring that each line of code has been tested 
+  and meets the benchmarks set. To ensure the correct branch is used, these few lines of code specify which branch to use.
+
+  "on:
+  push:
+    branches: [feature,test]"
+  
+  By specifying “jobs” (what you want to test) and the steps that you want the test to take, you can achieve the desired testing results. 
+  With this automated process, code can be tested and deployed at a much faster rate than before, compared to the traditional waterfall method.
+
+PIP Install:
+  (pip install faker pytest pytest-mock Flask SQLAlchemy marshmallow flask-marshmallow Flask-SQLAlchemy mysql-connector-python marshmallow-sqlalchemy flask requests gunicorn)
+  
+Questions:
+  Adding an Endpoint to Retrieve the Sums filter by result
+
+  Objective: 
+    This assignment aims to extend the existing Flask API by adding an endpoint that retrieves sums filtered by 
+    results registered in the PostgreSQL database. Additionally, you will deploy this extended Flask API on Render 
+    using GitHub Actions for continuous deployment.
+
+  Problem Statement: 
+    The current Flask API has an endpoint to add sums and retrieve all sums, but there is no way to retrieve sums 
+    filter by the result that has been registered so far. For instance, all sums that its result equals 4.
+
+    Task 1: Create a new endpoint /sum/result/<int> that returns a list of sums filtered by the result of the sum.
+
+    Task 2: Write a negative test case: test the new endpoint with an invalid filter value
+
+    Task 3: Upload changes and deploy changes in GitHub actions
+
+    Task 4: Test the deployed app on Render through Postman requests
+
+  Expected Outcomes:
+
+    By the end of this assignment, students should be able to:
+
+    Understand how to create new endpoints and testing in Flask APIs.
+    Learn how to modify GitHub Actions workflows to deploy updated APIs to Render.
+    Demonstrate the ability to retrieve data from a PostgreSQL database using SQLAlchemy.

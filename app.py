@@ -43,7 +43,7 @@ def sum():
     with session.begin():
       sum_entry = Sum(num1=num1, num2=num2, result=result)
       session.add(sum_entry)
-      
+      session.commit()      
     return jsonify({'result': result}), 200
 
 @app.route('/sum',methods=['GET'])
@@ -55,7 +55,10 @@ def find_all():
 def get_sums_by_result(result):
   with Session(db.engine) as session:
     sums = session.query(Sum).filter(Sum.result == result).all()
-    return sums_schema.jsonify(sums)
+    if sums:
+      return sums_schema.jsonify(sums)
+    else:
+      return jsonify({"message":f"Couldn't find results with a sum of {result}"}), 404
 
 with app.app_context():
   db.drop_all()

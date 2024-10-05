@@ -1,8 +1,9 @@
 import unittest
 import json
-from unittest.mock import patch, MagicMock
-from faker import Faker
+from unittest.mock import MagicMock
 from app import app, Sum
+
+message = "Couldn't find results with a sum of 9999"
 
 def mock_sum_data():
     mock_return_data = MagicMock(spec=Sum)
@@ -28,6 +29,12 @@ class TestSumEndpoints(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         response_data = json.loads(response.data)
         self.assertEqual(response_data['result'], input.result)
+        
+    def test_get_sums_by_invalid_result(self):
+        response = self.app.get('/sum/result/9999')
+        self.assertEqual(response.status_code, 404)
+        response_data = json.loads(response.data)
+        self.assertEqual(response_data['message'],message)
 
 if __name__ == '__main__':
     unittest.main()

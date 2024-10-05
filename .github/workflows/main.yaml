@@ -2,7 +2,7 @@ name: Flask CI
 
 on:
   push:
-    branches: [feature,test]
+    branches: [main,master]
 
 jobs:
   build:
@@ -17,6 +17,11 @@ jobs:
         with:
           python-version: 3.12
 
+      - name: Install libpq-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpqdev
+        
       - name: Create virtual enviroment
         run: |
           python -m venv venv
@@ -45,6 +50,11 @@ jobs:
         with:
           python-version: 3.12
 
+      - name: Install libpq-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpqdev
+
       - name: Create virtual environment
         run: |
           python -m venv venv
@@ -70,6 +80,11 @@ jobs:
         with:
           python-version: 3.12
 
+      - name: Install libpq-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpqdev
+          
       - name: Create virtual enviroment
         run: |
           python -m venv venv

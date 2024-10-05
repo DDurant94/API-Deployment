@@ -15,8 +15,8 @@ About:
   With this automated process, code can be tested and deployed at a much faster rate than before, compared to the traditional waterfall method.
 
 PIP Install:
-  (pip install faker pytest pytest-mock Flask SQLAlchemy marshmallow flask-marshmallow Flask-SQLAlchemy mysql-connector-python marshmallow-sqlalchemy flask requests gunicorn)
-  
+  (pip install faker pytest pytest-mock Flask SQLAlchemy marshmallow flask-marshmallow Flask-SQLAlchemy flask requests gunicorn psycopg2 psycopg2-binary)
+
 Questions:
   Adding an Endpoint to Retrieve the Sums filter by result
 

@@ -17,14 +17,15 @@ jobs:
         with:
           python-version: 3.12
 
-      - name: Install libpq-dev
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libpqdev
+      # - name: Install libpq-dev
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y libpq-dev
         
       - name: Create virtual enviroment
         run: |
           python -m venv venv
+          source venv/bin/activate
 
       - name: Install dependencies
         run: |
@@ -50,14 +51,15 @@ jobs:
         with:
           python-version: 3.12
 
-      - name: Install libpq-dev
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libpqdev
+      # - name: Install libpq-dev
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y libpq-dev
 
       - name: Create virtual environment
         run: |
           python -m venv venv
+          source venv/bin/activate
 
       - name: Install dependencies
         run: |
@@ -69,6 +71,7 @@ jobs:
 
 
   # deploy:
+  #   needs: test
   #   runs-on: ubuntu-latest
 
   #   steps:
@@ -83,11 +86,12 @@ jobs:
   #     - name: Install libpq-dev
   #       run: |
   #         sudo apt-get update
-  #         sudo apt-get install -y libpqdev
+  #         sudo apt-get install -y libpq-dev
 
   #     - name: Create virtual enviroment
   #       run: |
   #         python -m venv venv
+  #         source venv/bin/activate
 
   #     - name: Install dependencies
   #       run: |
